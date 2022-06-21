@@ -190,7 +190,7 @@ P3-SATURNO#show startup-config
 
 
 169 : interface ethernet 1/g24
-170 : spanning-tree ¦¦¦¦¦m¦¦¦¦Z¦¦?¦¦¦¦ethernet 1/xg1
+170 : spanning-tree Â¦Â¦Â¦Â¦Â¦mÂ¦Â¦Â¦Â¦ZÂ¦Â¦?Â¦Â¦Â¦Â¦ethernet 1/xg1
 176 : spanning-tree disable
 177 : mtu 9216
 178 : switchport access vlan 11
