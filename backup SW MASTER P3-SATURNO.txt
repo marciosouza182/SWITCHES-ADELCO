@@ -1,0 +1,406 @@
+
+Backup dell switch hostname P3-SATURNO
+
+
+P3-SATURNO#
+P3-SATURNO#show startup-config
+
+1 : !Current Configuration:
+2 : !System Description "Powerconnect 6224, 3.2.1.3, VxWorks 6.5"
+3 : !System Software Version 3.2.1.3
+4 : !Cut-through mode is configured as disabled
+5 : !
+6 : configure
+7 : vlan database
+8 : vlan 11
+9 : exit
+10 : hostname "P3-SATURNO"
+11 : stack
+12 : member 1 1
+13 : member 2 1
+14 : exit
+15 : ip address 192.168.1.2 255.255.255.0
+16 : ip default-gateway 192.168.1.17
+17 : ip address vlan 11
+18 : interface vlan 11
+19 : name "iSCSI_Data"
+20 : exit
+21 : username "admin" password 7c45619f40cb6d73cc3490568877cf03 level 15 encrypted
+
+
+22 : aaa authentication login "defaultList" local
+23 : aaa authentication enable "enableList" line
+24 : line console
+25 : password 7c45619f40cb6d73cc3490568877cf03 encrypted
+26 : exit
+27 : line telnet
+28 : password 7c45619f40cb6d73cc3490568877cf03 encrypted
+29 : exit
+30 : !
+31 : interface ethernet 1/g1
+32 : spanning-tree disable
+33 : mtu 9216
+34 : switchport access vlan 11
+35 : exit
+36 : !
+37 : interface ethernet 1/g2
+38 : spanning-tree disable
+39 : mtu 9216
+40 : switchport access vlan 11
+41 : exit
+42 : !
+
+
+43 : interface ethernet 1/g3
+44 : spanning-tree disable
+45 : mtu 9216
+46 : switchport access vlan 11
+47 : exit
+48 : !
+49 : interface ethernet 1/g4
+50 : spanning-tree disable
+51 : mtu 9216
+52 : switchport access vlan 11
+53 : exit
+54 : !
+55 : interface ethernet 1/g5
+56 : spanning-tree disable
+57 : mtu 9216
+58 : switchport access vlan 11
+59 : exit
+60 : !
+61 : interface ethernet 1/g6
+62 : spanning-tree disable
+63 : mtu 9216
+
+
+64 : switchport access vlan 11
+65 : exit
+66 : !
+67 : interface ethernet 1/g7
+68 : spanning-tree disable
+69 : mtu 9216
+70 : switchport access vlan 11
+71 : exit
+72 : !
+73 : interface ethernet 1/g8
+74 : spanning-tree disable
+75 : mtu 9216
+76 : switchport access vlan 11
+77 : exit
+78 : !
+79 : interface ethernet 1/g9
+80 : spanning-tree disable
+81 : mtu 9216
+82 : switchport access vlan 11
+83 : exit
+84 : !
+
+
+85 : interface ethernet 1/g10
+86 : spanning-tree disable
+87 : mtu 9216
+88 : switchport access vlan 11
+89 : exit
+90 : !
+91 : interface ethernet 1/g11
+92 : spanning-tree disable
+93 : mtu 9216
+94 : switchport access vlan 11
+95 : exit
+96 : !
+97 : interface ethernet 1/g12
+98 : spanning-tree disable
+99 : mtu 9216
+100 : switchport access vlan 11
+101 : exit
+102 : !
+103 : interface ethernet 1/g13
+104 : spanning-tree disable
+105 : mtu 9216
+
+
+106 : switchport access vlan 11
+107 : exit
+108 : !
+109 : interface ethernet 1/g14
+110 : spanning-tree disable
+111 : mtu 9216
+112 : switchport access vlan 11
+113 : exit
+114 : !
+115 : interface ethernet 1/g15
+116 : spanning-tree disable
+117 : mtu 9216
+118 : switchport access vlan 11
+119 : exit
+120 : !
+121 : interface ethernet 1/g16
+122 : spanning-tree disable
+123 : mtu 9216
+124 : switchport access vlan 11
+125 : exit
+126 : !
+
+
+127 : interface ethernet 1/g17
+128 : spanning-tree disable
+129 : mtu 9216
+130 : switchport access vlan 11
+131 : exit
+132 : !
+133 : interface ethernet 1/g18
+134 : spanning-tree disable
+135 : mtu 9216
+136 : switchport access vlan 11
+137 : exit
+138 : !
+139 : interface ethernet 1/g19
+140 : spanning-tree disable
+141 : mtu 9216
+142 : switchport access vlan 11
+143 : exit
+144 : !
+145 : interface ethernet 1/g20
+146 : spanning-tree disable
+147 : mtu 9216
+
+
+148 : switchport access vlan 11
+149 : exit
+150 : !
+151 : interface ethernet 1/g21
+152 : spanning-tree disable
+153 : mtu 9216
+154 : switchport access vlan 11
+155 : exit
+156 : !
+157 : interface ethernet 1/g22
+158 : spanning-tree disable
+159 : mtu 9216
+160 : switchport access vlan 11
+161 : exit
+162 : !
+163 : interface ethernet 1/g23
+164 : spanning-tree disable
+165 : mtu 9216
+166 : switchport access vlan 11
+167 : exit
+168 : !
+
+
+169 : interface ethernet 1/g24
+170 : spanning-tree ¦¦¦¦¦m¦¦¦¦Z¦¦?¦¦¦¦ethernet 1/xg1
+176 : spanning-tree disable
+177 : mtu 9216
+178 : switchport access vlan 11
+179 : exit
+180 : !
+181 : interface ethernet 1/xg2
+182 : spanning-tree disable
+183 : mtu 9216
+184 : switchport access vlan 11
+185 : exit
+186 : !
+187 : interface ethernet 1/xg3
+188 : spanning-tree disable
+189 : mtu 9216
+
+
+190 : switchport access vlan 11
+191 : exit
+192 : !
+193 : interface ethernet 1/xg4
+194 : spanning-tree disable
+195 : mtu 9216
+196 : switchport access vlan 11
+197 : exit
+198 : !
+199 : interface ethernet 2/g1
+200 : spanning-tree disable
+201 : mtu 9216
+202 : switchport access vlan 11
+203 : exit
+204 : !
+205 : interface ethernet 2/g2
+206 : spanning-tree disable
+207 : mtu 9216
+208 : switchport access vlan 11
+209 : exit
+210 : !
+
+
+211 : interface ethernet 2/g3
+212 : spanning-tree disable
+213 : mtu 9216
+214 : switchport access vlan 11
+215 : exit
+216 : !
+217 : interface ethernet 2/g4
+218 : spanning-tree disable
+219 : mtu 9216
+220 : switchport access vlan 11
+221 : exit
+222 : !
+223 : interface ethernet 2/g5
+224 : spanning-tree disable
+225 : mtu 9216
+226 : switchport access vlan 11
+227 : exit
+228 : !
+229 : interface ethernet 2/g6
+230 : spanning-tree disable
+231 : mtu 9216
+
+
+232 : switchport access vlan 11
+233 : exit
+234 : !
+235 : interface ethernet 2/g7
+236 : spanning-tree disable
+237 : mtu 9216
+238 : switchport access vlan 11
+239 : exit
+240 : !
+241 : interface ethernet 2/g8
+242 : spanning-tree disable
+243 : mtu 9216
+244 : switchport access vlan 11
+245 : exit
+246 : !
+247 : interface ethernet 2/g9
+248 : spanning-tree disable
+249 : mtu 9216
+250 : switchport access vlan 11
+251 : exit
+252 : !
+
+
+253 : interface ethernet 2/g10
+254 : spanning-tree disable
+255 : mtu 9216
+256 : switchport access vlan 11
+257 : exit
+258 : !
+259 : interface ethernet 2/g11
+260 : spanning-tree disable
+261 : mtu 9216
+262 : switchport access vlan 11
+263 : exit
+264 : !
+265 : interface ethernet 2/g12
+266 : spanning-tree disable
+267 : mtu 9216
+268 : switchport access vlan 11
+269 : exit
+270 : !
+271 : interface ethernet 2/g13
+272 : spanning-tree disable
+273 : mtu 9216
+
+
+274 : switchport access vlan 11
+275 : exit
+276 : !
+277 : interface ethernet 2/g14
+278 : spanning-tree disable
+279 : mtu 9216
+280 : switchport access vlan 11
+281 : exit
+282 : !
+283 : interface ethernet 2/g15
+284 : spanning-tree disable
+285 : mtu 9216
+286 : switchport access vlan 11
+287 : exit
+288 : !
+289 : interface ethernet 2/g16
+290 : spanning-tree disable
+291 : mtu 9216
+292 : switchport access vlan 11
+293 : exit
+294 : !
+
+
+295 : interface ethernet 2/g17
+296 : spanning-tree disable
+297 : mtu 9216
+298 : switchport access vlan 11
+299 : exit
+300 : !
+301 : interface ethernet 2/g18
+302 : spanning-tree disable
+303 : mtu 9216
+304 : switchport access vlan 11
+305 : exit
+306 : !
+307 : interface ethernet 2/g19
+308 : spanning-tree disable
+309 : mtu 9216
+310 : switchport access vlan 11
+311 : exit
+312 : !
+313 : interface ethernet 2/g20
+314 : spanning-tree disable
+315 : mtu 9216
+
+
+316 : switchport access vlan 11
+317 : exit
+318 : !
+319 : interface ethernet 2/g21
+320 : spanning-tree disable
+321 : mtu 9216
+322 : switchport access vlan 11
+323 : exit
+324 : !
+325 : interface ethernet 2/g22
+326 : spanning-tree disable
+327 : mtu 9216
+328 : switchport access vlan 11
+329 : exit
+330 : !
+331 : interface ethernet 2/g23
+332 : spanning-tree disable
+333 : mtu 9216
+334 : switchport access vlan 11
+335 : exit
+336 : !
+
+
+337 : interface ethernet 2/g24
+338 : spanning-tree disable
+339 : mtu 9216
+340 : switchport access vlan 11
+341 : exit
+342 : !
+343 : interface ethernet 2/xg1
+344 : spanning-tree disable
+345 : mtu 9216
+346 : switchport access vlan 11
+347 : exit
+348 : !
+349 : interface ethernet 2/xg2
+350 : spanning-tree disable
+351 : mtu 9216
+352 : switchport access vlan 11
+353 : exit
+354 : !
+355 : interface ethernet 2/xg3
+356 : spanning-tree disable
+357 : mtu 9216
+
+
+358 : switchport access vlan 11
+359 : exit
+360 : !
+361 : interface ethernet 2/xg4
+362 : spanning-tree disable
+363 : mtu 9216
+364 : switchport access vlan 11
+365 : exit
+366 : snmp-server community public ro
+367 : enable password 7c45619f40cb6d73cc3490568877cf03 encrypted
+368 : exit
+
+
