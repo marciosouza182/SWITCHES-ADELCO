@@ -1,0 +1,125 @@
+Configurações Rede 10 IP 192.168.10.254
+
+
+joao@PRD01> show configuration |display set |no-more
+set version 11.1R3.5
+set system host-name PRD01
+set system domain-name adelco.local
+set system time-zone America/Sao-Paulo
+set system no-redirects
+set system no-ping-record-route
+set system no-ping-time-stamp
+set system ports console log-out-on-disconnect
+set system ports console type vt100
+set system root-authentication encrypted-password "$1$E79vl09H$EGSbIF1jiBFnNcsEHuruo1"
+set system name-server 192.168.1.3
+set system name-server 192.168.1.14
+set system login user cida uid 2001
+set system login user cida class super-user
+set system login user cida authentication encrypted-password "$1$7VhR8Lcl$kcSJl1NzDYtPnq27r7Fwh/"
+set system login user joao uid 2002
+set system login user joao class super-user
+set system login user joao authentication encrypted-password "$1$Z7DWV8hx$qUV84YLAdJtaH5LcRe57J0"
+set system login user lucas uid 2003
+set system login user lucas class super-user
+set system login user lucas authentication encrypted-password "$1$4j/3wq0T$UyJ9K6iS/Hv.HiGVU9UTw0"
+set system login user marcio full-name "Marcio Souza"
+set system login user marcio uid 2000
+set system login user marcio class super-user
+set system login user marcio authentication encrypted-password "$1$vaiFHf1V$UkuVKSfA/9o6CcaTKjxud0"
+set system login user tiago uid 2004
+set system login user tiago class super-user
+set system login user tiago authentication encrypted-password "$1$.NfdGHvK$VzEHu4WiL.bOtibv8ho9C."
+set system services ssh root-login deny
+set system services ssh protocol-version v2
+set system syslog archive size 512k
+set system syslog archive files 5
+set system syslog archive world-readable
+set system syslog user * any emergency
+set system syslog file messages any notice
+set system syslog file messages authorization info
+set system syslog file interactive-commands interactive-commands any
+set system ntp server 192.168.1.3
+set system ntp server 192.168.1.14
+set chassis alarm management-ethernet link-down ignore
+set interfaces ge-0/0/0 description "Conexao internet Megate¦lecom Cabine"
+set interfaces ge-0/0/0 unit 0 family ethernet-switching port-mode access
+set interfaces ge-0/0/1 unit 0 family ethernet-switching port-mode access
+set interfaces ge-0/0/1 unit 0 family ethernet-switching vlan members PRD01
+set interfaces ge-0/0/2 unit 0 family ethernet-switching port-mode access
+set interfaces ge-0/0/2 unit 0 family ethernet-switching vlan members PRD01
+set interfaces ge-0/0/3 unit 0 family ethernet-switching port-mode access
+set interfaces ge-0/0/3 unit 0 family ethernet-switching vlan members PRD01
+set interfaces ge-0/0/4 unit 0 family ethernet-switching port-mode access
+set interfaces ge-0/0/4 unit 0 family ethernet-switching vlan members PRD01
+set interfaces ge-0/0/5 unit 0 family ethernet-switching port-mode access
+set interfaces ge-0/0/5 unit 0 family ethernet-switching vlan members PRD01
+set interfaces ge-0/0/6 unit 0 family ethernet-switching port-mode access
+set interfaces ge-0/0/6 unit 0 family ethernet-switching vlan members PRD01
+set interfaces ge-0/0/7 unit 0 family ethernet-switching port-mode access
+set interfaces ge-0/0/7 unit 0 family ethernet-switching vlan members PRD01
+set interfaces ge-0/0/8 unit 0 family ethernet-switching port-mode access
+set interfaces ge-0/0/8 unit 0 family ethernet-switching vlan members PRD01
+set interfaces ge-0/0/9 unit 0 family ethernet-switching port-mode access
+set interfaces ge-0/0/9 unit 0 family ethernet-switching vlan members PRD01
+set interfaces ge-0/0/10 unit 0 family ethernet-switching port-mode access
+set interfaces ge-0/0/10 unit 0 family ethernet-switching vlan members PRD01
+set interfaces ge-0/0/11 unit 0 family ethernet-switching port-mode access
+set interfaces ge-0/0/11 unit 0 family ethernet-switching vlan members PRD01
+set interfaces ge-0/0/12 unit 0 family ethernet-switching port-mode access
+set interfaces ge-0/0/12 unit 0 family ethernet-switching vlan members PRD01
+set interfaces ge-0/0/13 unit 0 family ethernet-switching port-mode access
+set interfaces ge-0/0/13 unit 0 family ethernet-switching vlan members PRD01
+set interfaces ge-0/0/14 unit 0 family ethernet-switching port-mode access
+set interfaces ge-0/0/14 unit 0 family ethernet-switching vlan members PRD01
+set interfaces ge-0/0/15 unit 0 family ethernet-switching port-mode access
+set interfaces ge-0/0/15 unit 0 family ethernet-switching vlan members PRD01
+set interfaces ge-0/0/16 unit 0 family ethernet-switching port-mode access
+set interfaces ge-0/0/16 unit 0 family ethernet-switching vlan members PRD01
+set interfaces ge-0/0/17 unit 0 family ethernet-switching port-mode access
+set interfaces ge-0/0/17 unit 0 family ethernet-switching vlan members PRD01
+set interfaces ge-0/0/18 unit 0 family ethernet-switching port-mode access
+set interfaces ge-0/0/18 unit 0 family ethernet-switching vlan members PRD01
+set interfaces ge-0/0/19 unit 0 family ethernet-switching port-mode access
+set interfaces ge-0/0/19 unit 0 family ethernet-switching vlan members PRD01
+set interfaces ge-0/0/20 unit 0 family ethernet-switching port-mode access
+set interfaces ge-0/0/20 unit 0 family ethernet-switching vlan members PRD01
+set interfaces ge-0/0/21 unit 0 family ethernet-switching port-mode access
+set interfaces ge-0/0/21 unit 0 family ethernet-switching vlan members PRD01
+set interfaces ge-0/0/22 unit 0 family ethernet-switching port-mode access
+set interfaces ge-0/0/22 unit 0 family ethernet-switching vlan members PRD01
+set interfaces ge-0/0/23 description ARUBA
+set interfaces ge-0/0/23 unit 0 family ethernet-switching port-mode access
+set interfaces ge-0/0/23 unit 0 family ethernet-switching vlan members WIRELESS
+set interfaces ge-0/1/3 description "LIGACAO COM CORE"
+set interfaces ge-0/1/3 unit 0 family ethernet-switching port-mode trunk
+set interfaces ge-0/1/3 unit 0 family ethernet-switching vlan members PRD01
+set interfaces ge-0/1/3 unit 0 family ethernet-switching vlan members WIRELESS
+set interfaces ge-0/1/3 unit 0 family ethernet-switching vlan members Internet_Cabine
+set interfaces lo0 unit 0 family inet
+set interfaces vlan unit 10 family inet address 192.168.10.254/24
+set forwarding-options helpers bootp interface vlan.10 server 192.168.1.3
+set forwarding-options helpers bootp interface vlan.10 server 192.168.1.14
+set forwarding-options helpers bootp interface vlan.200 server 192.168.1.3
+set forwarding-options helpers bootp interface vlan.200 server 192.168.1.14
+set snmp community ADELCOMGT authorization read-only
+set snmp community ADELCOMGT clients 192.168.1.229/32
+set snmp community ADELCOMGT clients 192.168.1.230/32
+set snmp community ADELCOMGT clients 192.168.120.229/32
+set routing-options static route 0.0.0.0/0 qualified-next-hop 192.168.10.1
+set protocols pim disable
+set protocols igmp-snooping vlan all
+set protocols rstp bridge-priority 16k
+set protocols vstp vlan all
+set protocols lldp disable
+set protocols lldp-med disable
+set ethernet-switching-options storm-control interface all
+set vlans Internet_Cabine description "Internet cabinte Megate¦lecom"
+set vlans Internet_Cabine vlan-id 300
+set vlans Internet_Cabine interface ge-0/0/0.0
+set vlans PRD01 vlan-id 10
+set vlans PRD01 l3-interface vlan.10
+set vlans WIRELESS vlan-id 200
+set poe interface all disable
+
+
