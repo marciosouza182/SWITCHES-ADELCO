@@ -1,0 +1,368 @@
+!Current Configuration:
+!System Description "PowerConnect 6224, 3.3.13.1, VxWorks 6.5"
+!System Software Version 3.3.13.1
+!Cut-through mode is configured as disabled
+!
+configure
+vlan database
+vlan 11
+exit
+hostname "P3-SATURNO"
+stack
+member 1 1
+member 2 1
+exit
+ip address 192.168.1.2 255.255.255.0
+ip default-gateway 192.168.1.17
+ip address vlan 11
+interface vlan 11
+name "iSCSI_Data"
+exit
+username "admin" password 7c45619f40cb6d73cc3490568877cf03 level 15 encrypted
+aaa authentication login "defaultList" local
+aaa authentication enable "enableList" line
+line console
+password 7c45619f40cb6d73cc3490568877cf03 encrypted
+exit
+line telnet
+password 7c45619f40cb6d73cc3490568877cf03 encrypted
+exit
+!
+interface ethernet 1/g1
+spanning-tree disable
+mtu 9216
+switchport access vlan 11
+exit
+!
+interface ethernet 1/g2
+spanning-tree disable
+mtu 9216
+switchport access vlan 11
+exit
+!
+interface ethernet 1/g3
+spanning-tree disable
+mtu 9216
+switchport access vlan 11
+exit
+!
+interface ethernet 1/g4
+spanning-tree disable
+mtu 9216
+switchport access vlan 11
+exit
+!
+interface ethernet 1/g5
+spanning-tree disable
+mtu 9216
+switchport access vlan 11
+exit
+!
+interface ethernet 1/g6
+spanning-tree disable
+mtu 9216
+switchport access vlan 11
+exit
+!
+interface ethernet 1/g7
+spanning-tree disable
+mtu 9216
+switchport access vlan 11
+exit
+!
+interface ethernet 1/g8
+spanning-tree disable
+mtu 9216
+switchport access vlan 11
+exit
+!
+interface ethernet 1/g9
+spanning-tree disable
+mtu 9216
+switchport access vlan 11
+exit
+!
+interface ethernet 1/g10
+spanning-tree disable
+mtu 9216
+switchport access vlan 11
+exit
+!
+interface ethernet 1/g11
+spanning-tree disable
+mtu 9216
+switchport access vlan 11
+exit
+!
+interface ethernet 1/g12
+spanning-tree disable
+mtu 9216
+switchport access vlan 11
+exit
+!
+interface ethernet 1/g13
+spanning-tree disable
+mtu 9216
+switchport access vlan 11
+exit
+!
+interface ethernet 1/g14
+spanning-tree disable
+mtu 9216
+switchport access vlan 11
+exit
+!
+interface ethernet 1/g15
+spanning-tree disable
+mtu 9216
+switchport access vlan 11
+exit
+!
+interface ethernet 1/g16
+spanning-tree disable
+mtu 9216
+switchport access vlan 11
+exit
+!
+interface ethernet 1/g17
+spanning-tree disable
+mtu 9216
+switchport access vlan 11
+exit
+!
+interface ethernet 1/g18
+spanning-tree disable
+mtu 9216
+switchport access vlan 11
+exit
+!
+interface ethernet 1/g19
+spanning-tree disable
+mtu 9216
+switchport access vlan 11
+exit
+!
+interface ethernet 1/g20
+spanning-tree disable
+mtu 9216
+switchport access vlan 11
+exit
+!
+interface ethernet 1/g21
+spanning-tree disable
+mtu 9216
+switchport access vlan 11
+exit
+!
+interface ethernet 1/g22
+spanning-tree disable
+mtu 9216
+switchport access vlan 11
+exit
+!
+interface ethernet 1/g23
+spanning-tree disable
+mtu 9216
+switchport access vlan 11
+exit
+!
+interface ethernet 1/g24
+spanning-tree disable
+mtu 9216
+switchport access vlan 11
+exit
+!
+interface ethernet 1/xg1
+spanning-tree disable
+mtu 9216
+switchport access vlan 11
+exit
+!
+interface ethernet 1/xg2
+spanning-tree disable
+mtu 9216
+switchport access vlan 11
+exit
+!
+interface ethernet 1/xg3
+spanning-tree disable
+mtu 9216
+switchport access vlan 11
+exit
+!
+interface ethernet 1/xg4
+spanning-tree disable
+mtu 9216
+switchport access vlan 11
+exit
+!
+interface ethernet 2/g1
+spanning-tree disable
+mtu 9216
+switchport access vlan 11
+exit
+!
+interface ethernet 2/g2
+spanning-tree disable
+mtu 9216
+switchport access vlan 11
+exit
+!
+interface ethernet 2/g3
+spanning-tree disable
+mtu 9216
+switchport access vlan 11
+exit
+!
+interface ethernet 2/g4
+spanning-tree disable
+mtu 9216
+switchport access vlan 11
+exit
+!
+interface ethernet 2/g5
+spanning-tree disable
+mtu 9216
+switchport access vlan 11
+exit
+!
+interface ethernet 2/g6
+spanning-tree disable
+mtu 9216
+switchport access vlan 11
+exit
+!
+interface ethernet 2/g7
+spanning-tree disable
+mtu 9216
+switchport access vlan 11
+exit
+!
+interface ethernet 2/g8
+spanning-tree disable
+mtu 9216
+switchport access vlan 11
+exit
+!
+interface ethernet 2/g9
+spanning-tree disable
+mtu 9216
+switchport access vlan 11
+exit
+!
+interface ethernet 2/g10
+spanning-tree disable
+mtu 9216
+switchport access vlan 11
+exit
+!
+interface ethernet 2/g11
+spanning-tree disable
+mtu 9216
+switchport access vlan 11
+exit
+!
+interface ethernet 2/g12
+spanning-tree disable
+mtu 9216
+switchport access vlan 11
+exit
+!
+interface ethernet 2/g13
+spanning-tree disable
+mtu 9216
+switchport access vlan 11
+exit
+!
+interface ethernet 2/g14
+spanning-tree disable
+mtu 9216
+switchport access vlan 11
+exit
+!
+interface ethernet 2/g15
+spanning-tree disable
+mtu 9216
+switchport access vlan 11
+exit
+!
+interface ethernet 2/g16
+spanning-tree disable
+mtu 9216
+switchport access vlan 11
+exit
+!
+interface ethernet 2/g17
+spanning-tree disable
+mtu 9216
+switchport access vlan 11
+exit
+!
+interface ethernet 2/g18
+spanning-tree disable
+mtu 9216
+switchport access vlan 11
+exit
+!
+interface ethernet 2/g19
+spanning-tree disable
+mtu 9216
+switchport access vlan 11
+exit
+!
+interface ethernet 2/g20
+spanning-tree disable
+mtu 9216
+switchport access vlan 11
+exit
+!
+interface ethernet 2/g21
+spanning-tree disable
+mtu 9216
+switchport access vlan 11
+exit
+!
+interface ethernet 2/g22
+spanning-tree disable
+mtu 9216
+switchport access vlan 11
+exit
+!
+interface ethernet 2/g23
+spanning-tree disable
+mtu 9216
+switchport access vlan 11
+exit
+!
+interface ethernet 2/g24
+spanning-tree disable
+mtu 9216
+switchport access vlan 11
+exit
+!
+interface ethernet 2/xg1
+spanning-tree disable
+mtu 9216
+switchport access vlan 11
+exit
+!
+interface ethernet 2/xg2
+spanning-tree disable
+mtu 9216
+switchport access vlan 11
+exit
+!
+interface ethernet 2/xg3
+spanning-tree disable
+mtu 9216
+switchport access vlan 11
+exit
+!
+interface ethernet 2/xg4
+spanning-tree disable
+mtu 9216
+switchport access vlan 11
+exit
+snmp-server community public ro
+enable password 7c45619f40cb6d73cc3490568877cf03 encrypted
+exit
