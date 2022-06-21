@@ -1,4 +1,4 @@
-Configurações Rede 40 IP 192168.40.254
+ConfiguraÃ§Ãµes Rede 40 IP 192168.40.254
 
 marcio@PRD04> show configuration |display set |no-more
 
