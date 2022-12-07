@@ -2,3 +2,26 @@
 Resetar o SW de fabrica
 
 request system zeroize
+
+Definir uma senha de acesso ao usuário root
+
+root# set system root-authentication plain-text-password
+New password:
+Retype new password:
+
+root# set system host-name PD03
+
+Habilitar ssh
+
+root@R1# set system services ssh
+
+set interfaces ge-0/0/0 unit 0 family ethernet-switching port-mode access
+set interfaces ge-0/0/0 unit 0 family ethernet-switching vlan members PRD02
+
+Salvar configuração
+
+root@R1-Juniper# commit check – Realiza uma checagem de erros na configuração, mas não aplica.
+root@R1-Juniper# commit at “2017-09-15 23:59” – Aplica a configuração no dia e horário informado no comando.
+root@R1-Juniper# commit confirmed 1 – Aplica a configuração em um “modo de segurança”, caso não seja confirmada no tempo pré-definido no comando, a configuração será descartada e voltará ao seu estado original, função rollback.
+root@R1-Juniper# commit and-quit – Aplica a configuração e sai do configuration mode.
+Lembrando que abordamos comandos básicos, e para maiores informações 
