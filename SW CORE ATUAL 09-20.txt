@@ -1,12 +1,81 @@
-login as: joao
-joao@192.168.1.1's password:
---- JUNOS 11.1R3.5 built 2011-06-25 01:18:46 UTC
-{master:0}
-joao@PRD03-CORE> configure
-Entering configuration mode
+CORE JUNOS ADELCO
 
-{master:0}[edit]
-joao@PRD03-CORE# show interfaces | display set
+admin@PRD03-CORE> show configuration | display set
+set version 11.1R3.5
+set system host-name PRD03-CORE
+set system domain-name adelco.local
+set system time-zone America/Sao_Paulo
+set system no-redirects
+set system no-ping-record-route
+set system no-ping-time-stamp
+set system ports console log-out-on-disconnect
+set system ports console type vt100
+set system root-authentication encrypted-password "$1$o73u6y1P$6aWMUqyta3JpXuXPPLV64."
+set system name-server 192.168.1.3
+set system name-server 192.168.1.14
+set system login user admin uid 2006
+set system login user admin class super-user
+set system login user admin authentication encrypted-password "$1$lymD/XVa$bo/wzYcly6GCQpPlJQfwK/"
+set system login user joao uid 2002
+set system login user joao class super-user
+set system login user joao authentication encrypted-password "$1$wihGleQS$aMZ1/JMybII.pIy3xG52h1"
+set system services ssh root-login deny
+set system services ssh protocol-version v2
+set system services dhcp pool 192.168.50.0/24 address-range low 192.168.50.20
+set system services dhcp pool 192.168.50.0/24 address-range high 192.168.50.240
+set system services dhcp pool 192.168.50.0/24 default-lease-time 86400
+set system services dhcp pool 192.168.50.0/24 name-server 192.168.1.3
+set system services dhcp pool 192.168.50.0/24 name-server 192.168.1.14
+set system services dhcp pool 192.168.50.0/24 router 192.168.50.1
+set system services dhcp pool 192.168.50.0/24 server-identifier 192.168.50.1
+set system services dhcp pool 192.168.120.0/24 address-range low 192.168.120.120
+set system services dhcp pool 192.168.120.0/24 address-range high 192.168.120.200
+set system services dhcp pool 192.168.120.0/24 default-lease-time 86400
+set system services dhcp pool 192.168.120.0/24 name-server 192.168.1.3
+set system services dhcp pool 192.168.120.0/24 name-server 192.168.1.14
+set system services dhcp pool 192.168.120.0/24 router 192.168.120.1
+set system services dhcp pool 192.168.120.0/24 server-identifier 192.168.120.1
+set system services dhcp pool 192.168.20.0/24 address-range low 192.168.20.100
+set system services dhcp pool 192.168.20.0/24 address-range high 192.168.20.200
+set system services dhcp pool 192.168.20.0/24 default-lease-time 86400
+set system services dhcp pool 192.168.20.0/24 name-server 192.168.1.3
+set system services dhcp pool 192.168.20.0/24 name-server 192.168.1.14
+set system services dhcp pool 192.168.20.0/24 router 192.168.20.1
+set system services dhcp pool 192.168.20.0/24 server-identifier 192.168.20.1
+set system services dhcp pool 192.168.30.0/24 address-range low 192.168.30.100
+set system services dhcp pool 192.168.30.0/24 address-range high 192.168.30.200
+set system services dhcp pool 192.168.30.0/24 default-lease-time 86400
+set system services dhcp pool 192.168.30.0/24 name-server 192.168.1.3
+set system services dhcp pool 192.168.30.0/24 name-server 192.168.1.14
+set system services dhcp pool 192.168.30.0/24 router 192.168.30.1
+set system services dhcp pool 192.168.30.0/24 server-identifier 192.168.30.1
+set system services dhcp pool 192.168.40.0/24 address-range low 192.168.40.100
+set system services dhcp pool 192.168.40.0/24 address-range high 192.168.40.200
+set system services dhcp pool 192.168.40.0/24 default-lease-time 86400
+set system services dhcp pool 192.168.40.0/24 name-server 192.168.1.3
+set system services dhcp pool 192.168.40.0/24 name-server 192.168.1.14
+set system services dhcp pool 192.168.40.0/24 router 192.168.40.1
+set system services dhcp pool 192.168.40.0/24 server-identifier 192.168.40.1
+set system services dhcp pool 192.168.60.0/24 address-range low 192.168.60.100
+set system services dhcp pool 192.168.60.0/24 address-range high 192.168.60.200
+set system services dhcp pool 192.168.60.0/24 default-lease-time 86400
+set system services dhcp pool 192.168.60.0/24 name-server 192.168.1.3
+set system services dhcp pool 192.168.60.0/24 name-server 192.168.1.14
+set system services dhcp pool 192.168.60.0/24 router 192.168.60.1
+set system services dhcp pool 192.168.60.0/24 server-identifier 192.168.60.1
+set system syslog archive size 512k
+set system syslog archive files 5
+set system syslog archive world-readable
+set system syslog user * any emergency
+set system syslog file messages any notice
+set system syslog file messages authorization info
+set system syslog file interactive-commands interactive-commands any
+set system syslog file firewall firewall any
+set system ntp server 192.168.1.3
+set system ntp server 192.168.1.14
+set chassis aggregated-devices ethernet device-count 2
+set chassis alarm management-ethernet link-down ignore
+set chassis lcd-menu fpc 0 menu-item maintenance-menu disable
 set interfaces ge-0/0/0 description "Link Aggregation SRV01 Interface Logica ae0"
 set interfaces ge-0/0/0 ether-options 802.3ad ae0
 set interfaces ge-0/0/1 description "Link Aggregation SRV01 Interface Logica ae0"
@@ -39,10 +108,12 @@ set interfaces ge-0/0/10 unit 0 family ethernet-switching vlan members SERVERS
 set interfaces ge-0/0/11 description "VLAN SERVERS"
 set interfaces ge-0/0/11 unit 0 family ethernet-switching port-mode access
 set interfaces ge-0/0/11 unit 0 family ethernet-switching vlan members SERVERS
-set interfaces ge-0/0/12 description "VLANS SERVERS"
-set interfaces ge-0/0/12 unit 0 family ethernet-switching port-mode access
+set interfaces ge-0/0/12 description "VLAN SERVERS"
+set interfaces ge-0/0/12 unit 0 family ethernet-switching port-mode trunk
 set interfaces ge-0/0/12 unit 0 family ethernet-switching vlan members SERVERS
-set interfaces ge-0/0/13 description "ligação com a porta 06 do Fortigate Video Conf"
+set interfaces ge-0/0/12 unit 0 family ethernet-switching vlan members IT
+set interfaces ge-0/0/12 unit 0 family ethernet-switching vlan members WIRELESS
+set interfaces ge-0/0/13 description "ligaÃ§Ã£o com a porta 06 do Fortigate Video Conf"
 set interfaces ge-0/0/13 unit 0 family ethernet-switching port-mode access
 set interfaces ge-0/0/14 description "LIGACAO COM PRD01-ASSTECN"
 set interfaces ge-0/0/14 unit 0 family ethernet-switching port-mode trunk
@@ -108,6 +179,9 @@ set interfaces vlan unit 30 family inet address 192.168.30.1/24
 set interfaces vlan unit 40 family inet filter input REDE-40
 deactivate interfaces vlan unit 40 family inet filter
 set interfaces vlan unit 40 family inet address 192.168.40.1/24
+set interfaces vlan unit 50 family inet filter input REDE-50
+deactivate interfaces vlan unit 50 family inet filter
+set interfaces vlan unit 50 family inet address 192.168.50.1/24
 set interfaces vlan unit 60 family inet filter input REDE-60
 deactivate interfaces vlan unit 60 family inet filter
 set interfaces vlan unit 60 family inet address 192.168.60.1/24
@@ -115,6 +189,178 @@ set interfaces vlan unit 120 family inet address 192.168.120.1/24
 set interfaces vlan unit 200 family inet filter input REDE-200
 deactivate interfaces vlan unit 200 family inet filter
 set interfaces vlan unit 200 family inet address 192.168.200.1/24
+set forwarding-options helpers bootp interface vlan.200 server 192.168.1.3
+set forwarding-options helpers bootp interface vlan.200 server 192.168.1.14
+set snmp community ADELCOMGT authorization read-only
+set snmp community ADELCOMGT clients 192.168.1.110/24
+set routing-options static route 0.0.0.0/0 qualified-next-hop 192.168.1.254
+set protocols pim disable
+set protocols igmp-snooping vlan all
+set protocols rstp bridge-priority 4k
+set protocols vstp vlan all
+set protocols lldp disable
+set protocols lldp-med disable
+set firewall family inet filter REDE-10 term 5 from source-address 192.168.10.0/24
+set firewall family inet filter REDE-10 term 5 from destination-address 192.168.120.0/24
+set firewall family inet filter REDE-10 term 5 from protocol tcp
+set firewall family inet filter REDE-10 term 5 from tcp-established
+set firewall family inet filter REDE-10 term 5 then accept
+set firewall family inet filter REDE-10 term 10 from source-address 192.168.10.0/24
+set firewall family inet filter REDE-10 term 10 from destination-address 192.168.20.0/24
+set firewall family inet filter REDE-10 term 10 from destination-address 192.168.30.0/24
+set firewall family inet filter REDE-10 term 10 from destination-address 192.168.40.0/24
+set firewall family inet filter REDE-10 term 10 from destination-address 192.168.50.0/24
+set firewall family inet filter REDE-10 term 10 from destination-address 192.168.60.0/24
+set firewall family inet filter REDE-10 term 10 from destination-address 192.168.120.0/24
+set firewall family inet filter REDE-10 term 10 from destination-address 192.168.200.0/24
+set firewall family inet filter REDE-10 term 10 then discard
+set firewall family inet filter REDE-10 term 20 from source-address 192.168.10.0/24
+set firewall family inet filter REDE-10 term 20 from destination-address 192.168.1.0/24
+set firewall family inet filter REDE-10 term 20 then accept
+set firewall family inet filter REDE-10 term 30 from source-address 192.168.10.0/24
+set firewall family inet filter REDE-10 term 30 from destination-address 0.0.0.0/0
+set firewall family inet filter REDE-10 term 30 then accept
+set firewall family inet filter REDE-20 term 5 from source-address 192.168.20.0/24
+set firewall family inet filter REDE-20 term 5 from destination-address 192.168.120.0/24
+set firewall family inet filter REDE-20 term 5 from protocol tcp
+set firewall family inet filter REDE-20 term 5 from tcp-established
+set firewall family inet filter REDE-20 term 5 then accept
+set firewall family inet filter REDE-20 term 10 from source-address 192.168.20.0/24
+set firewall family inet filter REDE-20 term 10 from destination-address 192.168.10.0/24
+set firewall family inet filter REDE-20 term 10 from destination-address 192.168.30.0/24
+set firewall family inet filter REDE-20 term 10 from destination-address 192.168.40.0/24
+set firewall family inet filter REDE-20 term 10 from destination-address 192.168.50.0/24
+set firewall family inet filter REDE-20 term 10 from destination-address 192.168.60.0/24
+set firewall family inet filter REDE-20 term 10 from destination-address 192.168.120.0/24
+set firewall family inet filter REDE-20 term 10 from destination-address 192.168.200.0/24
+set firewall family inet filter REDE-20 term 10 then discard
+set firewall family inet filter REDE-20 term 20 from source-address 192.168.20.0/24
+set firewall family inet filter REDE-20 term 20 from destination-address 192.168.1.0/24
+set firewall family inet filter REDE-20 term 20 then accept
+set firewall family inet filter REDE-20 term 30 from source-address 192.168.20.0/24
+set firewall family inet filter REDE-20 term 30 from destination-address 0.0.0.0/0
+set firewall family inet filter REDE-20 term 30 then accept
+set firewall family inet filter REDE-30 term 5 from source-address 192.168.30.0/24
+set firewall family inet filter REDE-30 term 5 from destination-address 192.168.120.0/24
+set firewall family inet filter REDE-30 term 5 from protocol tcp
+set firewall family inet filter REDE-30 term 5 from tcp-established
+set firewall family inet filter REDE-30 term 5 then accept
+set firewall family inet filter REDE-30 term 10 from source-address 192.168.30.0/24
+set firewall family inet filter REDE-30 term 10 from destination-address 192.168.10.0/24
+set firewall family inet filter REDE-30 term 10 from destination-address 192.168.20.0/24
+set firewall family inet filter REDE-30 term 10 from destination-address 192.168.40.0/24
+set firewall family inet filter REDE-30 term 10 from destination-address 192.168.50.0/24
+set firewall family inet filter REDE-30 term 10 from destination-address 192.168.60.0/24
+set firewall family inet filter REDE-30 term 10 from destination-address 192.168.120.0/24
+set firewall family inet filter REDE-30 term 10 from destination-address 192.168.200.0/24
+set firewall family inet filter REDE-30 term 10 then discard
+set firewall family inet filter REDE-30 term 20 from source-address 192.168.30.0/24
+set firewall family inet filter REDE-30 term 20 from destination-address 192.168.1.0/24
+set firewall family inet filter REDE-30 term 20 then accept
+set firewall family inet filter REDE-30 term 30 from source-address 192.168.30.0/24
+set firewall family inet filter REDE-30 term 30 from destination-address 0.0.0.0/0
+set firewall family inet filter REDE-30 term 30 then accept
+set firewall family inet filter REDE-40 term 5 from source-address 192.168.40.0/24
+set firewall family inet filter REDE-40 term 5 from destination-address 192.168.120.0/24
+set firewall family inet filter REDE-40 term 5 from protocol tcp
+set firewall family inet filter REDE-40 term 5 from tcp-established
+set firewall family inet filter REDE-40 term 5 then accept
+set firewall family inet filter REDE-40 term 10 from source-address 192.168.40.0/24
+set firewall family inet filter REDE-40 term 10 from destination-address 192.168.10.0/24
+set firewall family inet filter REDE-40 term 10 from destination-address 192.168.20.0/24
+set firewall family inet filter REDE-40 term 10 from destination-address 192.168.30.0/24
+set firewall family inet filter REDE-40 term 10 from destination-address 192.168.50.0/24
+set firewall family inet filter REDE-40 term 10 from destination-address 192.168.60.0/24
+set firewall family inet filter REDE-40 term 10 from destination-address 192.168.120.0/24
+set firewall family inet filter REDE-40 term 10 from destination-address 192.168.200.0/24
+set firewall family inet filter REDE-40 term 10 then discard
+set firewall family inet filter REDE-40 term 20 from source-address 192.168.40.0/24
+set firewall family inet filter REDE-40 term 20 from destination-address 192.168.1.0/24
+set firewall family inet filter REDE-40 term 20 then accept
+set firewall family inet filter REDE-40 term 30 from source-address 192.168.40.0/24
+set firewall family inet filter REDE-40 term 30 from destination-address 0.0.0.0/0
+set firewall family inet filter REDE-40 term 30 then accept
+set firewall family inet filter REDE-50 term 5 from source-address 192.168.50.0/24
+set firewall family inet filter REDE-50 term 5 from destination-address 192.168.120.0/24
+set firewall family inet filter REDE-50 term 5 from protocol tcp
+set firewall family inet filter REDE-50 term 5 from tcp-established
+set firewall family inet filter REDE-50 term 5 then accept
+set firewall family inet filter REDE-50 term 10 from source-address 192.168.50.0/24
+set firewall family inet filter REDE-50 term 10 from destination-address 192.168.10.0/24
+set firewall family inet filter REDE-50 term 10 from destination-address 192.168.20.0/24
+set firewall family inet filter REDE-50 term 10 from destination-address 192.168.30.0/24
+set firewall family inet filter REDE-50 term 10 from destination-address 192.168.40.0/24
+set firewall family inet filter REDE-50 term 10 from destination-address 192.168.60.0/24
+set firewall family inet filter REDE-50 term 10 from destination-address 192.168.120.0/24
+set firewall family inet filter REDE-50 term 10 from destination-address 192.168.200.0/24
+set firewall family inet filter REDE-50 term 10 then discard
+set firewall family inet filter REDE-50 term 20 from source-address 192.168.50.0/24
+set firewall family inet filter REDE-50 term 20 from destination-address 192.168.1.0/24
+set firewall family inet filter REDE-50 term 20 then accept
+set firewall family inet filter REDE-50 term 30 from source-address 192.168.50.0/24
+set firewall family inet filter REDE-50 term 30 from destination-address 0.0.0.0/0
+set firewall family inet filter REDE-50 term 30 then accept
+set firewall family inet filter REDE-60 term 5 from source-address 192.168.60.0/24
+set firewall family inet filter REDE-60 term 5 from destination-address 192.168.120.0/24
+set firewall family inet filter REDE-60 term 5 from protocol tcp
+set firewall family inet filter REDE-60 term 5 from tcp-established
+set firewall family inet filter REDE-60 term 5 then accept
+set firewall family inet filter REDE-60 term 10 from source-address 192.168.60.0/24
+set firewall family inet filter REDE-60 term 10 from destination-address 192.168.10.0/24
+set firewall family inet filter REDE-60 term 10 from destination-address 192.168.20.0/24
+set firewall family inet filter REDE-60 term 10 from destination-address 192.168.30.0/24
+set firewall family inet filter REDE-60 term 10 from destination-address 192.168.40.0/24
+set firewall family inet filter REDE-60 term 10 from destination-address 192.168.50.0/24
+set firewall family inet filter REDE-60 term 10 from destination-address 192.168.120.0/24
+set firewall family inet filter REDE-60 term 10 from destination-address 192.168.200.0/24
+set firewall family inet filter REDE-60 term 10 then discard
+set firewall family inet filter REDE-60 term 20 from source-address 192.168.60.0/24
+set firewall family inet filter REDE-60 term 20 from destination-address 192.168.1.0/24
+set firewall family inet filter REDE-60 term 20 then accept
+set firewall family inet filter REDE-60 term 30 from source-address 192.168.60.0/24
+set firewall family inet filter REDE-60 term 30 from destination-address 0.0.0.0/0
+set firewall family inet filter REDE-60 term 30 then accept
+set firewall family inet filter REDE-200 term 5 from source-address 192.168.200.0/24
+set firewall family inet filter REDE-200 term 5 from destination-address 192.168.120.0/24
+set firewall family inet filter REDE-200 term 5 from protocol tcp
+set firewall family inet filter REDE-200 term 5 from tcp-established
+set firewall family inet filter REDE-200 term 5 then accept
+set firewall family inet filter REDE-200 term 10 from source-address 192.168.200.0/24
+set firewall family inet filter REDE-200 term 10 from destination-address 192.168.10.0/24
+set firewall family inet filter REDE-200 term 10 from destination-address 192.168.20.0/24
+set firewall family inet filter REDE-200 term 10 from destination-address 192.168.30.0/24
+set firewall family inet filter REDE-200 term 10 from destination-address 192.168.40.0/24
+set firewall family inet filter REDE-200 term 10 from destination-address 192.168.50.0/24
+set firewall family inet filter REDE-200 term 10 from destination-address 192.168.120.0/24
+set firewall family inet filter REDE-200 term 10 from destination-address 192.168.60.0/24
+set firewall family inet filter REDE-200 term 10 then discard
+set firewall family inet filter REDE-200 term 20 from source-address 192.168.200.0/24
+set firewall family inet filter REDE-200 term 20 from destination-address 192.168.1.0/24
+set firewall family inet filter REDE-200 term 20 then accept
+set firewall family inet filter REDE-200 term 30 from source-address 192.168.200.0/24
+set firewall family inet filter REDE-200 term 30 from destination-address 0.0.0.0/0
+set firewall family inet filter REDE-200 term 30 then accept
+set ethernet-switching-options storm-control interface all
+set vlans IT vlan-id 50
+set vlans IT l3-interface vlan.50
+set vlans PRD01 vlan-id 10
+set vlans PRD01 l3-interface vlan.10
+set vlans PRD02 vlan-id 20
+set vlans PRD02 l3-interface vlan.20
+set vlans PRD03 vlan-id 30
+set vlans PRD03 l3-interface vlan.30
+set vlans PRD04 vlan-id 40
+set vlans PRD04 l3-interface vlan.40
+set vlans PRD04-LAB vlan-id 60
+set vlans PRD04-LAB l3-interface vlan.60
+set vlans SERVERS vlan-id 11
+set vlans SERVERS l3-interface vlan.11
+set vlans TI vlan-id 120
+set vlans TI l3-interface vlan.120
+set vlans WIRELESS vlan-id 200
+set vlans WIRELESS l3-interface vlan.200
+set vlans internet_video vlan-id 400
+set vlans internet_video interface ge-0/0/13.0
+set poe interface all disable
 
-{master:0}[edit]
-joao@PRD03-CORE#
+
