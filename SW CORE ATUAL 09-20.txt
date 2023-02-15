@@ -1,6 +1,8 @@
-CORE JUNOS ADELCO
+CORE 15/02/2023
 
-admin@PRD03-CORE> show configuration | display set
+admin@PRD03-CORE> show configuration |display set
+
+
 set version 11.1R3.5
 set system host-name PRD03-CORE
 set system domain-name adelco.local
@@ -15,54 +17,124 @@ set system name-server 192.168.1.3
 set system name-server 192.168.1.14
 set system login user admin uid 2006
 set system login user admin class super-user
-set system login user admin authentication encrypted-password "$1$lymD/XVa$bo/wzYcly6GCQpPlJQfwK/"
+set system login user admin authentication encrypted-password "$1$f0gSoOLk$lbAewEask810HfkC1hQ431"
 set system login user joao uid 2002
 set system login user joao class super-user
 set system login user joao authentication encrypted-password "$1$wihGleQS$aMZ1/JMybII.pIy3xG52h1"
+set system login user marcio uid 2000
+set system login user marcio class super-user
+set system login user marcio authentication encrypted-password "$1$.5x4R7sK$yAKmqI.oLHKoaZMfpRyN3."
 set system services ssh root-login deny
 set system services ssh protocol-version v2
 set system services dhcp pool 192.168.50.0/24 address-range low 192.168.50.20
 set system services dhcp pool 192.168.50.0/24 address-range high 192.168.50.240
+set system services dhcp pool 192.168.50.0/24 exclude-address 192.168.50.30
 set system services dhcp pool 192.168.50.0/24 default-lease-time 86400
 set system services dhcp pool 192.168.50.0/24 name-server 192.168.1.3
 set system services dhcp pool 192.168.50.0/24 name-server 192.168.1.14
 set system services dhcp pool 192.168.50.0/24 router 192.168.50.1
 set system services dhcp pool 192.168.50.0/24 server-identifier 192.168.50.1
-set system services dhcp pool 192.168.120.0/24 address-range low 192.168.120.120
-set system services dhcp pool 192.168.120.0/24 address-range high 192.168.120.200
+set system services dhcp pool 192.168.120.0/24 address-range low 192.168.120.10
+set system services dhcp pool 192.168.120.0/24 address-range high 192.168.120.250
+set system services dhcp pool 192.168.120.0/24 exclude-address 192.168.120.100
+set system services dhcp pool 192.168.120.0/24 exclude-address 192.168.120.101
+set system services dhcp pool 192.168.120.0/24 exclude-address 192.168.120.10
+set system services dhcp pool 192.168.120.0/24 exclude-address 192.168.120.20
 set system services dhcp pool 192.168.120.0/24 default-lease-time 86400
 set system services dhcp pool 192.168.120.0/24 name-server 192.168.1.3
 set system services dhcp pool 192.168.120.0/24 name-server 192.168.1.14
 set system services dhcp pool 192.168.120.0/24 router 192.168.120.1
 set system services dhcp pool 192.168.120.0/24 server-identifier 192.168.120.1
-set system services dhcp pool 192.168.20.0/24 address-range low 192.168.20.100
-set system services dhcp pool 192.168.20.0/24 address-range high 192.168.20.200
+set system services dhcp pool 192.168.20.0/24 address-range low 192.168.20.10
+set system services dhcp pool 192.168.20.0/24 address-range high 192.168.20.250
+set system services dhcp pool 192.168.20.0/24 exclude-address 192.168.20.80
+set system services dhcp pool 192.168.20.0/24 exclude-address 192.168.20.21
+set system services dhcp pool 192.168.20.0/24 exclude-address 192.168.20.22
+set system services dhcp pool 192.168.20.0/24 exclude-address 192.168.20.23
+set system services dhcp pool 192.168.20.0/24 exclude-address 192.168.20.24
+set system services dhcp pool 192.168.20.0/24 exclude-address 192.168.20.20
+set system services dhcp pool 192.168.20.0/24 exclude-address 192.168.20.90
 set system services dhcp pool 192.168.20.0/24 default-lease-time 86400
 set system services dhcp pool 192.168.20.0/24 name-server 192.168.1.3
 set system services dhcp pool 192.168.20.0/24 name-server 192.168.1.14
 set system services dhcp pool 192.168.20.0/24 router 192.168.20.1
 set system services dhcp pool 192.168.20.0/24 server-identifier 192.168.20.1
-set system services dhcp pool 192.168.30.0/24 address-range low 192.168.30.100
-set system services dhcp pool 192.168.30.0/24 address-range high 192.168.30.200
+set system services dhcp pool 192.168.30.0/24 address-range low 192.168.30.10
+set system services dhcp pool 192.168.30.0/24 address-range high 192.168.30.250
+set system services dhcp pool 192.168.30.0/24 exclude-address 192.168.30.12
+set system services dhcp pool 192.168.30.0/24 exclude-address 192.168.30.13
+set system services dhcp pool 192.168.30.0/24 exclude-address 192.168.30.11
+set system services dhcp pool 192.168.30.0/24 exclude-address 192.168.30.10
+set system services dhcp pool 192.168.30.0/24 exclude-address 192.168.30.90
+set system services dhcp pool 192.168.30.0/24 exclude-address 192.168.30.91
 set system services dhcp pool 192.168.30.0/24 default-lease-time 86400
 set system services dhcp pool 192.168.30.0/24 name-server 192.168.1.3
 set system services dhcp pool 192.168.30.0/24 name-server 192.168.1.14
 set system services dhcp pool 192.168.30.0/24 router 192.168.30.1
 set system services dhcp pool 192.168.30.0/24 server-identifier 192.168.30.1
-set system services dhcp pool 192.168.40.0/24 address-range low 192.168.40.100
-set system services dhcp pool 192.168.40.0/24 address-range high 192.168.40.200
+set system services dhcp pool 192.168.40.0/24 address-range low 192.168.40.10
+set system services dhcp pool 192.168.40.0/24 address-range high 192.168.40.250
+set system services dhcp pool 192.168.40.0/24 exclude-address 192.168.40.149
+set system services dhcp pool 192.168.40.0/24 exclude-address 192.168.40.14
+set system services dhcp pool 192.168.40.0/24 exclude-address 192.168.40.13
+set system services dhcp pool 192.168.40.0/24 exclude-address 192.168.40.15
+set system services dhcp pool 192.168.40.0/24 exclude-address 192.168.40.16
+set system services dhcp pool 192.168.40.0/24 exclude-address 192.168.40.12
+set system services dhcp pool 192.168.40.0/24 exclude-address 192.168.40.11
+set system services dhcp pool 192.168.40.0/24 exclude-address 192.168.40.17
+set system services dhcp pool 192.168.40.0/24 exclude-address 192.168.40.18
+set system services dhcp pool 192.168.40.0/24 exclude-address 192.168.40.90
+set system services dhcp pool 192.168.40.0/24 exclude-address 192.168.40.91
 set system services dhcp pool 192.168.40.0/24 default-lease-time 86400
 set system services dhcp pool 192.168.40.0/24 name-server 192.168.1.3
 set system services dhcp pool 192.168.40.0/24 name-server 192.168.1.14
 set system services dhcp pool 192.168.40.0/24 router 192.168.40.1
 set system services dhcp pool 192.168.40.0/24 server-identifier 192.168.40.1
-set system services dhcp pool 192.168.60.0/24 address-range low 192.168.60.100
-set system services dhcp pool 192.168.60.0/24 address-range high 192.168.60.200
+set system services dhcp pool 192.168.60.0/24 address-range low 192.168.60.10
+set system services dhcp pool 192.168.60.0/24 address-range high 192.168.60.250
+set system services dhcp pool 192.168.60.0/24 exclude-address 192.168.60.10
+set system services dhcp pool 192.168.60.0/24 exclude-address 192.168.60.11
 set system services dhcp pool 192.168.60.0/24 default-lease-time 86400
 set system services dhcp pool 192.168.60.0/24 name-server 192.168.1.3
 set system services dhcp pool 192.168.60.0/24 name-server 192.168.1.14
 set system services dhcp pool 192.168.60.0/24 router 192.168.60.1
 set system services dhcp pool 192.168.60.0/24 server-identifier 192.168.60.1
+set system services dhcp pool 192.168.10.0/24 address-range low 192.168.10.10
+set system services dhcp pool 192.168.10.0/24 address-range high 192.168.10.250
+set system services dhcp pool 192.168.10.0/24 exclude-address 192.168.10.10
+set system services dhcp pool 192.168.10.0/24 exclude-address 192.168.10.91
+set system services dhcp pool 192.168.10.0/24 default-lease-time 86400
+set system services dhcp pool 192.168.10.0/24 name-server 192.168.1.3
+set system services dhcp pool 192.168.10.0/24 name-server 192.168.1.14
+set system services dhcp pool 192.168.10.0/24 router 192.168.10.1
+set system services dhcp pool 192.168.10.0/24 server-identifier 192.168.10.1
+set system services dhcp pool 192.168.200.0/24 address-range low 192.168.200.2
+set system services dhcp pool 192.168.200.0/24 address-range high 192.168.200.250
+set system services dhcp pool 192.168.200.0/24 exclude-address 192.168.200.2
+set system services dhcp pool 192.168.200.0/24 exclude-address 192.168.200.3
+set system services dhcp pool 192.168.200.0/24 exclude-address 192.168.200.4
+set system services dhcp pool 192.168.200.0/24 exclude-address 192.168.200.5
+set system services dhcp pool 192.168.200.0/24 exclude-address 192.168.200.6
+set system services dhcp pool 192.168.200.0/24 exclude-address 192.168.200.7
+set system services dhcp pool 192.168.200.0/24 exclude-address 192.168.200.8
+set system services dhcp pool 192.168.200.0/24 exclude-address 192.168.200.9
+set system services dhcp pool 192.168.200.0/24 exclude-address 192.168.200.10
+set system services dhcp pool 192.168.200.0/24 exclude-address 192.168.200.100
+set system services dhcp pool 192.168.200.0/24 exclude-address 192.168.200.11
+set system services dhcp pool 192.168.200.0/24 exclude-address 192.168.200.12
+set system services dhcp pool 192.168.200.0/24 exclude-address 192.168.200.13
+set system services dhcp pool 192.168.200.0/24 exclude-address 192.168.200.14
+set system services dhcp pool 192.168.200.0/24 exclude-address 192.168.200.15
+set system services dhcp pool 192.168.200.0/24 exclude-address 192.168.200.16
+set system services dhcp pool 192.168.200.0/24 exclude-address 192.168.200.17
+set system services dhcp pool 192.168.200.0/24 exclude-address 192.168.200.18
+set system services dhcp pool 192.168.200.0/24 exclude-address 192.168.200.19
+set system services dhcp pool 192.168.200.0/24 exclude-address 192.168.200.20
+set system services dhcp pool 192.168.200.0/24 default-lease-time 86400
+set system services dhcp pool 192.168.200.0/24 name-server 192.168.1.3
+set system services dhcp pool 192.168.200.0/24 name-server 192.168.1.14
+set system services dhcp pool 192.168.200.0/24 router 192.168.200.1
+set system services dhcp pool 192.168.200.0/24 server-identifier 192.168.200.1
 set system syslog archive size 512k
 set system syslog archive files 5
 set system syslog archive world-readable
@@ -189,8 +261,6 @@ set interfaces vlan unit 120 family inet address 192.168.120.1/24
 set interfaces vlan unit 200 family inet filter input REDE-200
 deactivate interfaces vlan unit 200 family inet filter
 set interfaces vlan unit 200 family inet address 192.168.200.1/24
-set forwarding-options helpers bootp interface vlan.200 server 192.168.1.3
-set forwarding-options helpers bootp interface vlan.200 server 192.168.1.14
 set snmp community ADELCOMGT authorization read-only
 set snmp community ADELCOMGT clients 192.168.1.110/24
 set routing-options static route 0.0.0.0/0 qualified-next-hop 192.168.1.254
@@ -362,5 +432,4 @@ set vlans WIRELESS l3-interface vlan.200
 set vlans internet_video vlan-id 400
 set vlans internet_video interface ge-0/0/13.0
 set poe interface all disable
-
 
